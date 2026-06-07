@@ -1,4 +1,7 @@
 # deb-forge
+A framework for packaging bash automation scripts into .deb binaries. Currently featuring a GRUB splash image updater with automatic backups.
+
+
 This project build a debain package with a test payload to update the Kali linux splash image.
 ################HOWTO build package#############
 1. in the current directory where the git repo is downloaded run the scrip build_pkg.sh script and you are done.
