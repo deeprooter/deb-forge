@@ -7,7 +7,7 @@ This project build a debain package with a test payload to update the Kali linux
 By default there is a file named as grub-16x9.png which will be deployed as your potential splash screen if you install the John_Rambo.deb package. Please note that your original splash file will be backed up in directory before replacing.
 
 ####################HOWTO deploy the John_rambo.deb package################
-Execute sudo apt install ./package-name.deb
-sudo update-grub
-reboot
-You should see updated splash screen while Boot prompt displayed. 
+1.Execute sudo apt install ./package-name.deb
+2.sudo update-grub
+3.reboot
+4. You should see updated splash screen while Boot prompt displayed. 
