@@ -1,16 +1,48 @@
-# deb-forge
-A framework for packaging bash automation scripts into .deb binaries. Currently featuring a GRUB splash image updater with automatic backups.
+# 📦 Bash-to-Debian Packaging Framework
 
+A framework for packaging Bash automation scripts into `.deb` binaries. This project currently features a GRUB splash image updater equipped with automatic backup functionality.
 
-This project build a debain package with a test payload to update the Kali linux splash image.
-################HOWTO build package#############
-1. in the current directory where the git repo is downloaded run the scrip build_pkg.sh script and you are done.
-2. The debian pakage generated from the script is intentially named as John_Rambo.deb
-3. The resources directory contains wallpapers that can be used to setup as splash screen.
-By default there is a file named as grub-16x9.png which will be deployed as your potential splash screen if you install the John_Rambo.deb package. Please note that your original splash file will be backed up in directory before replacing.
+This repository builds a Debian package containing a test payload designed to safely update the Kali Linux splash image.
 
-####################HOWTO deploy the John_rambo.deb package################
-1.Execute sudo apt install ./package-name.deb
-2.sudo update-grub
-3.reboot
-4. You should see updated splash screen while Boot prompt displayed. 
+---
+
+## 🛠️ How to Build the Package
+
+To generate the Debian package, run the build script from the root directory of your cloned repository:
+
+```bash
+./build_pkg.sh
+```
+
+### 📝 Important Build Notes:
+* **Output Binary:** The script intentionally generates a package named `John_Rambo.deb`.
+* **Customizing Assets:** The `resources/` directory contains wallpapers available for your splash screen. 
+* **Default Payload:** By default, the framework uses `grub-16x9.png`. Installing the package will deploy this file as your new splash screen.
+* **Safety First:** Your original splash screen file is automatically backed up in its original directory before any replacement occurs.
+
+---
+
+## 🚀 How to Deploy the `John_Rambo.deb` Package
+
+Follow these steps to install the package and apply your new GRUB splash screen:
+
+### 1. Install the package
+Navigate to the directory containing your generated `.deb` file and run:
+```bash
+sudo apt install ./John_Rambo.deb
+```
+
+### 2. Update the GRUB configuration
+Apply the changes to your bootloader:
+```bash
+sudo update-grub
+```
+
+### 3. Reboot your system
+Restart your machine to initialize the new configurations:
+```bash
+sudo reboot
+```
+
+### 4. Verify the deployment
+You should now see your updated splash screen displayed during the system boot prompt.
