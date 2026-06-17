@@ -46,3 +46,17 @@ sudo reboot
 
 ### 4. Verify the deployment
 You should now see your updated splash screen displayed during the system boot prompt.
+
+
+
+---
+
+# Future ideas for the project
+### 1. Implementing customization for Zorin and Ubuntu Linux destros.
+### 2. Rollback feature restoring the previous configuration.
+### 3. Providing more control to the user over payload selection.
+### 4. implementing SOTA functionality on a host maching using the payload. 
+
+
+
+### <EOF>
