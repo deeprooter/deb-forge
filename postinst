@@ -24,7 +24,9 @@ if [ -f "$TARGET_FILE" ]; then
 fi
 
 # Copy the background image to the destination
-sudo cp resources/grub-16x9.png "/boot/grub/themes/$ID/"
+echo "path for splash=$(pwd)"
+#sudo cp resources/grub-16x9.png "/boot/grub/themes/$ID/"
+sudo cp /usr/share/splash-changer/grub-16x9.png "/boot/grub/themes/$ID/"
 
 ###################################################################
 # Copy the image to the Plymouth themes directory
