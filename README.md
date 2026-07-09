@@ -15,21 +15,21 @@ To generate the Debian package, run the build script from the root directory of 
 ```
 
 ### 📝 Important Build Notes:
-* **Output Binary:** The script intentionally generates a package named `John_Rambo.deb`.
+* **Output Binary:** The script intentionally generates a package named `change-splash.deb`.
 * **Customizing Assets:** The `resources/` directory contains wallpapers available for your splash screen. 
 * **Default Payload:** By default, the framework uses `grub-16x9.png`. Installing the package will deploy this file as your new splash screen.
 * **Safety First:** Your original splash screen file is automatically backed up in its original directory before any replacement occurs.
 
 ---
 
-## 🚀 How to Deploy the `John_Rambo.deb` Package
+## 🚀 How to Deploy the `change-splash.deb` Package
 
 Follow these steps to install the package and apply your new GRUB splash screen:
 
 ### 1. Install the package
 Navigate to the directory containing your generated `.deb` file and run:
 ```bash
-sudo apt install ./John_Rambo.deb
+sudo apt install ./change-splash.deb
 ```
 
 ### 2. Update the GRUB configuration
