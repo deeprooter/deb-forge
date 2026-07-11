@@ -32,19 +32,13 @@ Navigate to the directory containing your generated `.deb` file and run:
 sudo apt install ./change-splash.deb
 ```
 
-### 2. Update the GRUB configuration
-Apply the changes to your bootloader:
-```bash
-sudo update-grub
-```
-
-### 3. Reboot your system
+### 2. Reboot your system
 Restart your machine to initialize the new configurations:
 ```bash
 sudo reboot
 ```
 
-### 4. Verify the deployment
+### 3. Verify the deployment
 You should now see your updated splash screen displayed during the system boot prompt.
 
 
