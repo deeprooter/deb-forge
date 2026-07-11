@@ -8,14 +8,15 @@ set -e
 # Extract the OS ID without quotes
 ID=$(awk -F= '/^ID=/ {print $2}' /etc/os-release | tr -d '"')
 
-echo ""$ID""
+echo "Linux variant: "$ID""
 
 #backup the original image
 #sudo mv /boot/grub/themes/"$ID"/grub-16x9.png  /boot/grub/themes/"$ID"/grub-16x9.png.bkp
 
 # Define paths
-TARGET_DIR="/boot/grub/themes/$ID"
-TARGET_FILE="$TARGET_DIR/grub-16x9.png"
+#TARGET_DIR="/boot/grub/themes/$ID"
+TARGET_DIR="/usr/share/images/desktop-base"
+TARGET_FILE="$TARGET_DIR/desktop-grub.png"
 
 # 1. Backup the existing file if it exists
 if [ -f "$TARGET_FILE" ]; then
@@ -25,8 +26,8 @@ fi
 
 # Copy the background image to the destination
 echo "path for splash=$(pwd)"
-#sudo cp resources/grub-16x9.png "/boot/grub/themes/$ID/"
-sudo cp /usr/share/splash-changer/grub-16x9.png "/boot/grub/themes/$ID/"
+sudo cp resources/totoro.png "$TARGET_FILE"
+#sudo cp /usr/share/splash-changer/grub-16x9.png "/boot/grub/themes/$ID/"
 
 ###################################################################
 # Copy the image to the Plymouth themes directory
@@ -40,6 +41,14 @@ sudo cp /usr/share/splash-changer/grub-16x9.png "/boot/grub/themes/$ID/"
 #sed -i '/^[[:space:]]*GRUB_BACKGROUND[[:space:]]*=/!b; c\GRUB_BACKGROUND="/boot/grub/my-custom-splash.png"' /etc/default/grub && grep -q '^GRUB_BACKGROUND=' /etc/default/grub || echo 'GRUB_BACKGROUND="/boot/grub/my-custom-splash.png"' | tee -a /etc/default/grub
 ####################################################################
 
-#update-grub
+update-grub
+
+if [ $? -eq 0 ]; then
+echo "Update-grub Sucess"
+else
+echo "Update-grub Failure"
+fi
+
+
 
 exit 0
